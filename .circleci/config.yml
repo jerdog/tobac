@@ -29,7 +29,7 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
-        run:
+      - run:
           name: upgrade pip
           command: '/home/circleci/.pyenv/versions/3.8.12/bin/python3.8 -m pip install --upgrade pip'
       - python/install-packages:
