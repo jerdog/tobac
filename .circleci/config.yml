@@ -29,10 +29,10 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
+        run:
+          name: upgrade pip
+          command: '/home/circleci/.pyenv/versions/3.8.12/bin/python3.8 -m pip install --upgrade pip'
       - python/install-packages:
-          run:
-            name: upgrade pip
-            command: /home/circleci/.pyenv/versions/3.8.12/bin/python3.8 -m pip install --upgrade pip
           pkg-manager: pip
           pip-dependency-file: conda-requirements.txt
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
